@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+        <%- include('./partials/head.ejs')  %>
+
+<body>
+
+    <%- include('./partials/nav.ejs')  %>
+    
+    <div class="blogs content">
+    <p style="font-size: 150px; text-align: center; font-style:normal; font-family: Georgia, 'Times New Roman', Times, serif;">Hey! How are you?</p>
+    <p style="text-align: center;">This is a home page</p>
+
+    <% if(blogs.length > 0) { %>
+        <% blogs.forEach(blog =>{ %>
+
+            <h3 class="title"><%= blog.title %></h3>
+            <p class="snippet"><%= blog.snippet %></p>
+            
+        <% }) %>
+    <% } else { %>
+        <p> There are no blogs to display.... </p>
+    <% } %>
+    </div>
+
+    <%- include('./partials/footer.ejs')  %>
+
+</body>
+</html>
